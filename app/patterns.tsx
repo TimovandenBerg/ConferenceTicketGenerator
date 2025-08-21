@@ -1,5 +1,6 @@
-import styles from "./patterns.module.css";
 import Image from "next/image";
+
+import styles from "./patterns.module.css";
 
 export default function Patterns() {
   return (

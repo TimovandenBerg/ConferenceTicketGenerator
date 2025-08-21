@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { inconsolata } from "./ui/fonts";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Conference Ticket Generator",
