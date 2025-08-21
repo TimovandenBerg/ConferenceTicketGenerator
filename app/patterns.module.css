@@ -1,0 +1,78 @@
+.lines {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.squigglyLineBottomMobileTablet,
+.squigglyLineBottomDesktop {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.squigglyLineBottomDesktop {
+  display: none;
+}
+
+.lineTop {
+  position: absolute;
+  top: 30;
+  right: 0;
+  width: 40%;
+  height: auto;
+  object-fit: contain;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.topCircle {
+  display: none;
+  position: absolute;
+  top: -9%;
+  left: 4%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.midCircle {
+  display: none;
+  position: absolute;
+  right: 27.5%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 1440px) {
+  .squigglyLineBottomMobileTablet {
+    display: none;
+  }
+  .squigglyLineBottomDesktop,
+  .topCircle,
+  .midCircle {
+    display: block;
+  }
+  .lineTop {
+    top: 60;
+    width: 20%;
+  }
+}

@@ -14,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inconsolata.className} font-sans`}>
-        {children}
-      </body>
+      <body className={`${inconsolata.className} font-sans`}>{children}</body>
     </html>
   );
 }

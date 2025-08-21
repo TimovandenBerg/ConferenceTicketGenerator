@@ -3,22 +3,20 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100%;
-  background-color: var(--text-gradient);
-  background-image: url('../public/backgrounds/background-mobile.png');
+  width: 100vw;
+  background-image: url("../public/backgrounds/background-mobile.png");
   background-size: cover;
   background-position: center;
   color: var(--neutral);
 }
 
-
 @media (min-width: 768px) {
   .main {
-    background-image: url('../public/backgrounds/background-tablet.png');
+    background-image: url("../public/backgrounds/background-tablet.png");
   }
 }
 @media (min-width: 1440px) {
   .main {
-    background-image: url('../public/backgrounds/background-desktop.png');
+    background-image: url("../public/backgrounds/background-desktop.png");
   }
 }
