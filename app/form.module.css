@@ -1,0 +1,92 @@
+/* Utility Classes */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.displayNone {
+  display: none;
+}
+
+/* ----------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  z-index: 10;
+}
+
+.input {
+  width: 100%;
+  padding: 15px 10px 15px 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-500);
+  background-color: var(--neutral-700-opacity);
+  color: var(--neutral);
+}
+
+::placeholder {
+  color: var(--neutral-300);
+}
+
+.dragDropArea {
+  background-color: var(--neutral-700-opacity);
+  border: 2px dashed var(--neutral-500);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.dragDropAreaActive {
+  background-color: var(--neutral-600);
+  border-color: var(--neutral-400);
+}
+
+.dragDropArea__input {
+  position: absolute;
+  opacity: 0;
+  height: 1px;
+  width: 1px;
+}
+
+.dragDropArea__label {
+  font-size: 14px;
+  color: var(--neutral-500);
+}
+
+.dragDropArea__icon {
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: var(--neutral-700);
+  border-radius: 8px;
+}
+
+.dragDropAreaInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  p {
+    font-size: 12px;
+    color: var(--neutral-500);
+  }
+}
+
+.button {
+  width: 100%;
+  padding: 15px 25px 15px 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--orange-500);
+  color: var(--neutral-900);
+  font-weight: bold;
+}
