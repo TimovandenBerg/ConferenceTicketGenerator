@@ -16,12 +16,6 @@ export default function Home() {
         height={30}
         alt="Logo company"
       />
-      <h2 className={styles.headliner}>
-        Your Journey to Coding Conf 2025 Starts Here!
-      </h2>
-      <p className={styles.text}>
-        Secure your spot at next year's biggest coding conference.
-      </p>
       <Form />
     </main>
   );

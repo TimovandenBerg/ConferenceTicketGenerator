@@ -2,9 +2,12 @@
 
 import React, { useRef, useState } from "react";
 import { Ticket } from "./lib/definitions";
-import { atksinson } from "./ui/fonts";
+import Image from "next/image";
+import { atksinson, inconsolata } from "./ui/fonts";
 import iconUpload from "../public/icons/icon-upload.svg";
 import iconInfo from "../public/icons/icon-info.svg";
+import logoMark from "../public/logo/logo-mark.svg";
+
 import styles from "./form.module.css";
 
 export default function Form() {
@@ -93,103 +96,111 @@ export default function Form() {
   return (
     <section>
       {formShown && (
-        <form action={createTicket} className={`${styles.form}`}>
-          <section>
-            <label htmlFor="avatar" className={atksinson.className}>
-              Upload Avatar
-            </label>
-            <section
-              className={`${styles.dragDropArea} ${
-                dragActive ? styles.dragDropAreaActive : ""
-              }`}
-              onDragOver={handleDragOver}
-              onDragLeave={handleDragLeave}
-              onDrop={handleDrop}
-            >
-              <input
-                ref={inputRef}
-                type="file"
-                className={`${atksinson.className} ${styles.dragDropArea__input}`}
-                id="avatar"
-                name="avatar"
-                accept="image/jpeg, image/png"
-                onChange={handleInputChange}
-              />
-              <div
-                className={`${atksinson.className} ${styles.center} ${styles.dragDropArea__label}`}
-                tabIndex={0}
-                role="button"
-                onClick={handleLabelClick}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") handleLabelClick();
-                }}
+        <section>
+          <h2 className={styles.headliner}>
+            Your Journey to Coding Conf 2025 Starts Here!
+          </h2>
+          <p className={styles.text}>
+            Secure your spot at next year's biggest coding conference.
+          </p>
+          <form action={createTicket} className={`${styles.form}`}>
+            <section>
+              <label htmlFor="avatar" className={atksinson.className}>
+                Upload Avatar
+              </label>
+              <section
+                className={`${styles.dragDropArea} ${
+                  dragActive ? styles.dragDropAreaActive : ""
+                }`}
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}
               >
-                <img
-                  src={iconUpload.src}
-                  alt="upload icon"
-                  className={styles.dragDropArea__icon}
+                <input
+                  ref={inputRef}
+                  type="file"
+                  className={`${atksinson.className} ${styles.dragDropArea__input}`}
+                  id="avatar"
+                  name="avatar"
+                  accept="image/jpeg, image/png"
+                  onChange={handleInputChange}
                 />
-                <br />
-                {avatarFile ? (
-                  <span>{avatarFile.name}</span>
-                ) : (
-                  "Drag & Drop or Click to Upload"
-                )}
-              </div>
+                <div
+                  className={`${atksinson.className} ${styles.center} ${styles.dragDropArea__label}`}
+                  tabIndex={0}
+                  role="button"
+                  onClick={handleLabelClick}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") handleLabelClick();
+                  }}
+                >
+                  <img
+                    src={iconUpload.src}
+                    alt="upload icon"
+                    className={styles.dragDropArea__icon}
+                  />
+                  <br />
+                  {avatarFile ? (
+                    <span>{avatarFile.name}</span>
+                  ) : (
+                    "Drag & Drop or Click to Upload"
+                  )}
+                </div>
+              </section>
+              <figcaption className={styles.dragDropAreaInfo}>
+                <img src={iconInfo.src} alt="info icon" />
+                <p>Upload your photo (JPG or PNG, max size 500kb)</p>
+              </figcaption>
+              {avatarError && (
+                <div style={{ color: "#ff4d4f", fontSize: 12, marginTop: 4 }}>
+                  {avatarError}
+                </div>
+              )}
             </section>
-            <figcaption className={styles.dragDropAreaInfo}>
-              <img src={iconInfo.src} alt="info icon" />
-              <p>Upload your photo (JPG or PNG, max size 500kb)</p>
-            </figcaption>
-            {avatarError && (
-              <div style={{ color: "#ff4d4f", fontSize: 12, marginTop: 4 }}>
-                {avatarError}
-              </div>
-            )}
-          </section>
-          <section>
-            <label htmlFor="name" className={atksinson.className}>
-              Full Name
-            </label>
-            <input
-              type="text"
-              className={`${atksinson.className} ${styles.input}`}
-              name="name"
-              id="name"
-              maxLength={100}
-              required
-            />
-          </section>
-          <section>
-            <label htmlFor="email" className={atksinson.className}>
-              Email Address
-            </label>
-            <input
-              className={`${atksinson.className} ${styles.input}`}
-              type="email"
-              name="email"
-              id="email"
-              placeholder="example@email.com"
-              required
-            />
-          </section>
-          <section>
-            <label htmlFor="gname" className={atksinson.className}>
-              Github Username
-            </label>
-            <input
-              type="text"
-              className={`${atksinson.className} ${styles.input}`}
-              name="gname"
-              id="gname"
-              placeholder="@yourusername"
-              required
-            />
-          </section>
-          <button type="submit" className={styles.button}>
-            Generate My Ticket
-          </button>
-        </form>
+            <section>
+              <label htmlFor="name" className={atksinson.className}>
+                Full Name
+              </label>
+              <input
+                type="text"
+                className={`${atksinson.className} ${styles.input}`}
+                name="name"
+                id="name"
+                maxLength={100}
+                required
+              />
+            </section>
+            <section>
+              <label htmlFor="email" className={atksinson.className}>
+                Email Address
+              </label>
+              <input
+                className={`${atksinson.className} ${styles.input}`}
+                type="email"
+                name="email"
+                id="email"
+                placeholder="example@email.com"
+                required
+              />
+            </section>
+            <section>
+              <label htmlFor="gname" className={atksinson.className}>
+                Github Username
+              </label>
+              <input
+                type="text"
+                className={`${atksinson.className} ${styles.input}`}
+                name="gname"
+                id="gname"
+                placeholder="@yourusername"
+                required
+              />
+            </section>
+            <button type="submit" className={styles.button}>
+              Generate My Ticket
+            </button>
+          </form>
+        </section>
       )}
       <section
         className={`${styles.ticketContainer} ${
@@ -198,13 +209,32 @@ export default function Form() {
       >
         {ticket ? (
           <div>
-            <h2>Your Ticket</h2>
-            <p>Name: {ticket.name}</p>
-            <p>Email: {ticket.email}</p>
+            <h2 className={styles.headliner}>
+              Congrats, <span className={styles.special}>{ticket.name}!</span>{" "}
+              Your ticket is ready.
+            </h2>
+            <p className={styles.text}>
+              We've emailed your ticket to{" "}
+              <span className={styles.orange}>{ticket.email}</span> and will
+              send updates in the run up to the event.
+            </p>
+
             <p>Github: {ticket.gname}</p>
             {ticket.avatar && (
               <img src={URL.createObjectURL(ticket.avatar)} alt="Avatar" />
             )}
+            <section className={styles.ticket}>
+              <section className={styles.ticketContainer}>
+                <section className={styles.ticketLeftSide}>
+                  <Image src={logoMark} alt="Logo Mark" />
+                  <section className={styles.dateContainer}>
+                    <h3>Coding Conf</h3>
+                    <p>Jan 31, 2025 / Austin, TX</p>
+                  </section>
+                </section>
+                <section className={styles.ticket}></section>
+              </section>
+            </section>
           </div>
         ) : (
           <></>
